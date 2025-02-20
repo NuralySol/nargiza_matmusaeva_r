@@ -2,7 +2,7 @@
 #! Author: Nargiza Matmusaeva
 #! Due Date: February 27, 2025
 
-# Function to Install & Load Required Packages
+# Function to Install and Load Required Packages
 install_if_missing <- function(packages) {
     new_packages <- packages[!(packages %in% installed.packages()[,"Package"])]
     if (length(new_packages)) {
@@ -15,7 +15,7 @@ install_if_missing <- function(packages) {
 # Define required packages
 required_packages <- c("gapminder", "ggplot2", "dplyr")
 
-# Install & Load required packages
+# Install and Load required packages
 install_if_missing(required_packages)
 
 # Import required libraries
@@ -50,7 +50,7 @@ print(p1)
 cat("\nGenerating Scatter Plot: GDP Per Capita vs Life Expectancy...\n")
 p2 <- ggplot(gapminder07, aes(x = gdpPercap, y = lifeExp)) +
     geom_point(color = "blue") +
-    scale_x_log10() +  # Log scale for better visualization
+    scale_x_log10() +  
     labs(title = "GDP Per Capita vs. Life Expectancy (2007)", x = "GDP per Capita", y = "Life Expectancy")
 print(p2)
 
@@ -58,7 +58,7 @@ print(p2)
 cat("\nGenerating Scatter Plot with Continents Colored...\n")
 p3 <- ggplot(gapminder07, aes(x = gdpPercap, y = lifeExp, color = continent)) +
     geom_point(size = 3) +
-    scale_x_log10() +  # Log scale for better visualization
+    scale_x_log10() +
     labs(title = "GDP Per Capita vs. Life Expectancy (2007) by Continent", x = "GDP per Capita", y = "Life Expectancy") +
     theme_minimal()
 print(p3)
